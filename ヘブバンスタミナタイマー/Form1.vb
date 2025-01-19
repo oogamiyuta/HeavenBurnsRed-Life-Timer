@@ -54,7 +54,7 @@ Public Class Form1
 
                         ' スタミナ更新と時間調整をシミュレート
                         While adjustedTime <= 0
-                            If savedLifeValue < 5 Then
+                            If savedLifeValue < 4 Then
                                 ' 4時間を追加し、スタミナを1増加
                                 adjustedTime += 4 * 3600
                                 savedLifeValue += 1
@@ -134,7 +134,7 @@ Public Class Form1
                 timerCountdown.Stop()
             Else
                 ' 0秒になった場合、自動で4時間を追加
-                remainingTime += 4 * 3600 ' 4時間を秒に変換して追加
+                remainingTime += 4 * 3600 - 1 ' 4時間を秒に変換して追加
                 Life.Value = Life.Value + 1
                 UpdateTimerLabel()
             End If
